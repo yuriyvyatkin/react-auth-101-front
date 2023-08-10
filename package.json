@@ -1,11 +1,11 @@
 {
-  "name": "github-chart",
+  "name": "react-auth-101-front",
   "author": {
     "name": "Yuriy Vyatkin"
   },
   "license": "Mozilla Public License 2.0",
-  "repository": "https://yuriyvyatkin.github.io/github-chart",
-  "homepage": "https://gitname.github.io/github-chart",
+  "repository": "https://yuriyvyatkin.github.io/react-auth-101-front",
+  "homepage": "https://gitname.github.io/react-auth-101-front",
   "main": "src/index.tsx",
   "private": true,
   "scripts": {
@@ -15,7 +15,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
-    "@types/react-router-dom": "^5.3.3",
+    "axios": "^1.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.10.0"
@@ -28,6 +28,7 @@
     "@types/gh-pages": "^3.2.1",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
+    "@types/react-router-dom": "^5.3.3",
     "babel-loader": "^9.1.2",
     "css-loader": "^6.8.1",
     "gh-pages": "^5.0.0",
