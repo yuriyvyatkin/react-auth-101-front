@@ -14,7 +14,7 @@ export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, redirectTo
     if (!user) {
       navigate(redirectTo);
     }
-  }, [user, navigate, redirectTo]);
+  }, [user, redirectTo]);
 
   if (!user) return null;
 
