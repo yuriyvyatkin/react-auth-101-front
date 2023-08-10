@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '@/util/API';
 import { useToken } from '@/auth/hooks/useToken';
+import { errorHandler } from "@/util/errorHandler";
 
 export const SignUpPage = () => {
   const [token, setToken] = useToken();
@@ -25,27 +26,7 @@ export const SignUpPage = () => {
       setToken(token);
       navigate('/');
     } catch (error: any) {
-      if (error.response) {
-        // Запрос был выполнен, и сервер ответил кодом состояния, который выпадает из диапазона 2xx
-        console.error(error.response.data);
-        console.error(error.response.status);
-        console.error(error.response.headers);
-        const userIsExist = error.response.data === 'Conflict';
-        setErrorMessage(
-          error.response.data.message ||
-            (userIsExist
-              ? 'Error: The user already exists.'
-              : 'Error during signup.'),
-        );
-      } else if (error.request) {
-        // Запрос был выполнен, но ответа не было
-        console.error(error.request);
-        setErrorMessage('No response from server. Please try again later.');
-      } else {
-        // Другие ошибки
-        console.error('Error: ', error.message);
-        setErrorMessage(error.message);
-      }
+      setErrorMessage(errorHandler(error, 'signup'));
     }
   };
 

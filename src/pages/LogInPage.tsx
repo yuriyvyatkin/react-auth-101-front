@@ -1,16 +1,32 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API } from '@/util/API';
+import { useToken } from '@/auth/hooks/useToken';
+import { errorHandler } from "@/util/errorHandler";
 
 export const LogInPage = () => {
+  const [token, setToken] = useToken();
+
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [emailValue, setEmailValue] = useState('');
-  const [passwordValue, setPasswordValue] = useState('');
+  const [emailValue, setEmailValue] = useState('abc@abcd.com');
+  const [passwordValue, setPasswordValue] = useState('123');
 
   const navigate = useNavigate();
 
   const onLogInClicked = async () => {
-    alert('Log in not implemented yet');
+    try {
+      const response = await API.post('/api/login', {
+        email: emailValue,
+        password: passwordValue,
+      });
+      const { token } = response.data;
+
+      setToken(token);
+      navigate('/');
+    } catch (error: any) {
+      setErrorMessage(errorHandler(error, 'login'));
+    }
   };
 
   return (
