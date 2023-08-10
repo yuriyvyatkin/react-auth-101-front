@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { ReactNode, useEffect } from 'react';
+import { useUser } from './hooks/useUser';
 
 interface PrivateRouteProps {
   children: ReactNode;
@@ -7,7 +8,7 @@ interface PrivateRouteProps {
 }
 
 export const PrivateRoute: React.FC<PrivateRouteProps> = ({ children, redirectTo }) => {
-  const user = null;
+  const user = useUser();
   const navigate = useNavigate();
 
   useEffect(() => {
