@@ -53,7 +53,8 @@ export const UserInfoPage = () => {
   };
 
   const logOut = () => {
-    alert('Log out functionality not implemented yet');
+    localStorage.removeItem('token');
+    navigate('/login');
   };
 
   const resetValues = () => {
