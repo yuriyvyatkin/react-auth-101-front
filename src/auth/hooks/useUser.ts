@@ -4,7 +4,11 @@ import { useToken } from './useToken';
 interface UserPayload {
   id: string;
   email: string;
-  info: string;
+  info: {
+    hairColor: string;
+    favoriteFood: string;
+    bio: string;
+  };
   isVerified: boolean;
 }
 
@@ -13,6 +17,7 @@ export const useUser = (): UserPayload | null => {
 
   const getPayloadFromToken = (token: string): UserPayload => {
     const encodedPayload = token.split('.')[1];
+
     return JSON.parse(atob(encodedPayload));
   };
 

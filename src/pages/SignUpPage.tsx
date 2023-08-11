@@ -5,7 +5,7 @@ import { useToken } from '@/auth/hooks/useToken';
 import { errorHandler } from "@/util/errorHandler";
 
 export const SignUpPage = () => {
-  const [token, setToken] = useToken();
+  const [, setToken] = useToken();
 
   const [errorMessage, setErrorMessage] = useState('');
 
