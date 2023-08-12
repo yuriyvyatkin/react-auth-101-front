@@ -10,6 +10,7 @@ import { PrivateRoute } from './auth/PrivateRoute';
 import { PleaseVerifyEmailPage } from './pages/PleaseVerifyEmailPage';
 import { EmailVerificationLandingPage } from './pages/EmailVerificationLandingPage';
 import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
+import { PasswordResetLandingPage } from './pages/PasswordResetLandingPage';
 
 export const Routes = () => {
   return (
@@ -31,6 +32,10 @@ export const Routes = () => {
           element={<EmailVerificationLandingPage />}
         />
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route
+          path="/reset-password/:passwordResetCode"
+          element={<PasswordResetLandingPage />}
+        />
       </Switch>
     </Router>
   );
