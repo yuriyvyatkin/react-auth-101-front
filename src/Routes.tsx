@@ -9,6 +9,7 @@ import { SignUpPage } from './pages/SignUpPage';
 import { PrivateRoute } from './auth/PrivateRoute';
 import { PleaseVerifyEmailPage } from './pages/PleaseVerifyEmailPage';
 import { EmailVerificationLandingPage } from './pages/EmailVerificationLandingPage';
+import { ForgotPasswordPage } from './pages/ForgotPasswordPage';
 
 export const Routes = () => {
   return (
@@ -29,6 +30,7 @@ export const Routes = () => {
           path="/verify-email/:verificationString"
           element={<EmailVerificationLandingPage />}
         />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
       </Switch>
     </Router>
   );
