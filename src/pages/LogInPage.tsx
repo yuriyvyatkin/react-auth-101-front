@@ -1,16 +1,16 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API } from '@/util/API';
+import { API } from '@/utils/API';
 import { useToken } from '@/auth/hooks/useToken';
-import { errorHandler } from "@/util/errorHandler";
+import { errorHandler } from "@/utils/errorHandler";
 
 export const LogInPage = () => {
   const [, setToken] = useToken();
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [emailValue, setEmailValue] = useState('abc@abcd.com');
-  const [passwordValue, setPasswordValue] = useState('123');
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
 
   const navigate = useNavigate();
 

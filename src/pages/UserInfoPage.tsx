@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { API } from '@/util/API';
+import { API } from '@/utils/API';
 import { useToken } from '@/auth/hooks/useToken';
 import { useUser } from '@/auth/hooks/useUser';
 
@@ -14,7 +14,7 @@ export const UserInfoPage = () => {
     return null;
   }
 
-  const { id, email, info } = user;
+  const { id, email, isVerified, info } = user;
   const [favoriteFood, setFavoriteFood] = useState(info.favoriteFood || '');
   const [hairColor, setHairColor] = useState(info.hairColor || '');
   const [bio, setBio] = useState(info.bio || '');
@@ -66,6 +66,7 @@ export const UserInfoPage = () => {
   return (
     <div className="content-container">
       <h1>Info for {email}</h1>
+      {!isVerified && <div className="fail">You won't be able to make any changes until you verify your email</div>}
       {showSuccessMessage && (
         <div className="success">Successfully saved user data!</div>
       )}
