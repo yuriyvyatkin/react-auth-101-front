@@ -4,7 +4,7 @@ import { API } from '@/utils/API';
 import { PasswordResetSuccess } from './PasswordResetSuccess';
 import { PasswordResetFail } from './PasswordResetFail';
 
-export const PasswordResetLandingPage = () => {
+export const PasswordResetPage = () => {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailure, setIsFailure] = useState(false);
   const [passwordValue, setPasswordValue] = useState('');

@@ -5,7 +5,7 @@ import { useToken } from '@/auth/hooks/useToken';
 import { EmailVerificationSuccess } from './EmailVerificationSuccess';
 import { EmailVerificationFail } from './EmailVerificationFail';
 
-export const EmailVerificationLandingPage = () => {
+export const EmailVerificationPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [isSuccess, setIsSuccess] = useState(false);
   const { verificationString } = useParams();
