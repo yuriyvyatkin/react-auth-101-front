@@ -9,9 +9,9 @@ export const SignUpPage = () => {
 
   const [errorMessage, setErrorMessage] = useState('');
 
-  const [emailValue, setEmailValue] = useState('yuriyvyatkin@yandex.ru');
-  const [passwordValue, setPasswordValue] = useState('123');
-  const [confirmPasswordValue, setConfirmPasswordValue] = useState('123');
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState('');
 
   const navigate = useNavigate();
 
