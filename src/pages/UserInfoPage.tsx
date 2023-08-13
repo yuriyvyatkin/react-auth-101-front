@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '@/utils/API';
-import { useToken } from '@/auth/hooks/useToken';
-import { useUser } from '@/auth/hooks/useUser';
+import { useToken } from '@/hooks/useToken';
+import { useUser } from '@/hooks/useUser';
 
 export const UserInfoPage = () => {
   const user = useUser();

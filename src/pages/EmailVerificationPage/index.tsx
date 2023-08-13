@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { API } from '@/utils/API';
-import { useToken } from '@/auth/hooks/useToken';
+import { useToken } from '@/hooks/useToken';
 import { EmailVerificationSuccess } from './EmailVerificationSuccess';
 import { EmailVerificationFail } from './EmailVerificationFail';
 

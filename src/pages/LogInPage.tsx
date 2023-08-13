@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '@/utils/API';
-import { useToken } from '@/auth/hooks/useToken';
+import { useToken } from '@/hooks/useToken';
 import { errorHandler } from '@/utils/errorHandler';
-import { useQueryParams } from '@/utils/useQueryParams';
+import { useQueryParams } from '@/hooks/useQueryParams';
 
 export const LogInPage = () => {
   const [, setToken] = useToken();

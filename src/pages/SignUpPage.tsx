@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { API } from '@/utils/API';
-import { useToken } from '@/auth/hooks/useToken';
+import { useToken } from '@/hooks/useToken';
 import { errorHandler } from '@/utils/errorHandler';
 
 export const SignUpPage = () => {
