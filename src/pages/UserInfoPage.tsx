@@ -65,7 +65,10 @@ export const UserInfoPage = () => {
 
   return (
     <div className="content-container">
-      <h1>Info for {email}</h1>
+      <h1 className="content-container__multi-line-header">
+        <span>Info for</span>
+        <span className="multi-line-header__row">{email}</span>
+      </h1>
       {!isVerified && <div className="fail">You won't be able to make any changes until you verify your email</div>}
       {showSuccessMessage && (
         <div className="success">Successfully saved user data!</div>

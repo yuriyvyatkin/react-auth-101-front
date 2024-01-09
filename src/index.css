@@ -65,6 +65,17 @@ button {
   background-color: white;
 }
 
+.content-container__multi-line-header {
+  display: flex;
+  flex-direction: column;
+}
+
+.multi-line-header__row {
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
 .success {
   margin-bottom: 8px;
   padding: 16px;
